@@ -22,6 +22,26 @@ void stringp::upper() {
         }
     }
 }
+//Replace Method
+void stringp::replace(std::string srcString, std::string subString) {
+    std::vector<std::string> tokens = this->split();
+    //Replace Specified String
+    for(std::string& str : tokens) {
+        if(str == srcString) {
+            str = subString;
+        }
+    }
+    //Clear Current Value
+    this->clear();
+    for(int i = 0; i < tokens.size(); i++) {
+        if(i == (tokens.size() - 1)) {
+            *this += tokens[i];
+        } else {
+            *this += tokens[i];
+            *this += ' ';
+        }
+    }
+}
 //Split Methods
 std::vector<std::string> stringp::split() {
     std::string token;

@@ -12,6 +12,7 @@ public:
     //Custom Methods
     void lower();
     void upper();
+    void replace(std::string srcString, std::string subString);
     std::vector<std::string> split();
 };
 #endif //STRINGP
